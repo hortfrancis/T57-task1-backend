@@ -1,0 +1,18 @@
+{
+  "name": "t57-task1-backend",
+  "version": "1.0.0",
+  "description": "Express server for T57 task1 that uses Mongoose",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alex Hort-Francis",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}
