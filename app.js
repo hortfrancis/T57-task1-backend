@@ -23,10 +23,14 @@ mongoose.connect(MONGO_URI, {
   .then(() => console.log('Connection to MongoDB Atlas successful!'))
   .catch((err) => console.error('Error connecting to the database:', err));
 
+// Middleware
+ app.use(express.json());
+
 app.use((req, res, next) => {
   console.log(req.path, req.method);
   next();
 });
+
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
