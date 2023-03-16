@@ -1,10 +1,10 @@
-const Car = require('../models/car.model.js');
+const Car = require('../models/Car_model');
 
 exports.create = (req, res) => {
     // Validate request
     if(!req.body) {
         return res.status(400).send({
-            message: "Car content can not be empty"
+            error: "Car content can not be empty"
         });
     }
 
@@ -35,7 +35,7 @@ exports.findAll = (req, res) => {
         res.send(cars);
     }).catch(err => {
         res.status(500).send({
-            message: err.message || "An error occurred while retrieving cars."
+            error: err.message || "An error occurred while retrieving cars."
         });
     });
 }
