@@ -8,6 +8,7 @@ const Car = require('./controllers/Car_controller');
 
 const app = express();
 
+const ENDPOINT = '/api';
 const PORT = process.env.PORT || 8080;
 
 // Get MongoDB Atlas credentials from .env file
@@ -35,7 +36,9 @@ app.use((req, res, next) => {
 });
 
 
-app.get('/api', Car.findAll);
+app.get(ENDPOINT, Car.findAll);
+
+app.post(ENDPOINT, Car.create);
 
 app.listen(PORT, () => {
   console.log(`Listening for HTTP requests on port ${PORT}.`);
