@@ -5,6 +5,7 @@ require('dotenv').config();
 // Import Car controller
 const Car = require('./controllers/Car_controller');
 
+
 const app = express();
 
 const PORT = process.env.PORT || 8080;
@@ -14,7 +15,7 @@ const MONGO_USERNAME = process.env.MONGO_USERNAME;
 const MONGO_PASSWORD = process.env.MONGO_PASSWORD;
 
 // Connection string for MongoDB Atlas database
-const MONGO_URI = `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@hyperion-dev-1234.hiukfbn.mongodb.net/?retryWrites=true&w=majority`;
+const MONGO_URI = `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@hyperion-dev-1234.hiukfbn.mongodb.net/hyperd?retryWrites=true&w=majority`;
 
 // Options object as 2nd argument for better long-term compatibility with MongoDB Atlas
 mongoose.connect(MONGO_URI, {
@@ -34,12 +35,7 @@ app.use((req, res, next) => {
 });
 
 
-app.get('/', (req, res) => {
-
-
-  // res.send('Hello World!');
-
-});
+app.get('/api', Car.findAll);
 
 app.listen(PORT, () => {
   console.log(`Listening for HTTP requests on port ${PORT}.`);

@@ -13,7 +13,7 @@ const carSchema = mongoose.Schema({
 		type: String, 
 		required: false
 	},
-	refNum: {
+	regNum: {
 		type: String, 
 		required: true
 	}, 
