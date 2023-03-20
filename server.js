@@ -40,6 +40,8 @@ app.get(ENDPOINT, Car.findAll);
 
 app.post(ENDPOINT, Car.create);
 
+app.put(ENDPOINT, Car.updateOne);
+
 app.listen(PORT, () => {
   console.log(`Listening for HTTP requests on port ${PORT}.`);
 });

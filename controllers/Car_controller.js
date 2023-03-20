@@ -42,3 +42,6 @@ exports.findAll = (req, res) => {
         });
 }
 
+exports.updateOne = (req, res) => {
+    console.log('in updateOne()');
+}
