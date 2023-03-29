@@ -43,5 +43,14 @@ exports.findAll = (req, res) => {
 }
 
 exports.updateOne = (req, res) => {
-    console.log('in updateOne()');
+    Car.updateOne({ _id: req.body._id }, req.body)
+        .then(() => res.status(204).send())
+        .catch(error => res.status(400).json({ error }));
+
+}
+
+exports.deleteOne = (req, res) => {
+    Car.findByIdAndDelete(req.body._id)
+        .then(() => res.status(204).send())
+        .catch(error => res.status(400).json({ error }));
 }

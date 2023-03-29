@@ -42,6 +42,8 @@ app.post(ENDPOINT, Car.create);
 
 app.put(ENDPOINT, Car.updateOne);
 
+app.delete(ENDPOINT, Car.deleteOne);
+
 app.listen(PORT, () => {
   console.log(`Listening for HTTP requests on port ${PORT}.`);
 });
